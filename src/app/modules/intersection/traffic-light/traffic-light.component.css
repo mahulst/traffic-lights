@@ -1,0 +1,39 @@
+.shell {
+  border-radius: 1000px;
+  height: 160px;
+  width: 50px;
+  background-color: black;
+}
+
+
+.number {
+  color: white;
+  text-align: center;
+}
+
+.light {
+  border-radius: 1000px;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+
+  opacity: 0.3;
+}
+
+.active {
+  opacity: 1;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+

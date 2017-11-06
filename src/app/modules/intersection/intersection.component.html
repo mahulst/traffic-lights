@@ -1,0 +1,43 @@
+<div class="controls">
+  <div class="traffic-light"
+       *ngFor="let light of trafficLights$ | async">
+    <app-traffic-light [color]="light.color"
+                       [id]="light.id"
+                       (toggleLight)="toggleTrafficLight($event)"></app-traffic-light>
+  </div>
+</div>
+
+<div class="intersection">
+  <div class="road horizontal">
+
+  </div>
+
+  <div class="road vertical">
+
+  </div>
+
+  <app-car *ngFor="let car of getCarsOnLane(1) | async"
+           class="car"
+           [ngStyle]="{
+            'transform': 'rotate(90deg)',
+            'top.px': 322,
+            'left.px': car.progress * 2
+           }"></app-car>
+
+  <div class="traffic-light-icon"
+       [ngClass]="{ green: (getTrafficLightById(1) | async)?.color === lightState.Green }"
+       [ngStyle]="{ 'left.px': 250, 'top.px': 325 }">1</div>
+
+  <div class="traffic-light-icon"
+       [ngClass]="{ green: (getTrafficLightById(2) | async)?.color === lightState.Green }"
+       [ngStyle]="{ 'left.px': 325, 'top.px': 300 }">2</div>
+
+  <div class="traffic-light-icon"
+       [ngClass]="{ green: (getTrafficLightById(3) | async)?.color === lightState.Green }"
+       [ngStyle]="{ 'left.px': 305, 'top.px': 350 }">3</div>
+
+  <div class="traffic-light-icon"
+       [ngClass]="{ green: (getTrafficLightById(4) | async)?.color === lightState.Green }"
+       [ngStyle]="{ 'left.px': 275, 'top.px': 275 }">4</div>
+</div>
+

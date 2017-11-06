@@ -6,6 +6,8 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": [
