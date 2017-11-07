@@ -25,7 +25,10 @@ export class CarsEffects {
   @Effect()
   addCars$: Observable<Action> = Observable
     .interval(3000)
-    .map(() => new AddCar({ id: uuid(), lane: 1 }));
+    .map(() => {
+      const lane = Math.ceil(Math.random() * 4);
+      return new AddCar({ id: uuid(), lane: lane });
+    });
 
   @Effect()
   moveCars$: Observable<Action> = Observable

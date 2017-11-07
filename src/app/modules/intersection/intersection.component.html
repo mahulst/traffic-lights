@@ -20,8 +20,30 @@
            class="car"
            [ngStyle]="{
             'transform': 'rotate(90deg)',
-            'top.px': 322,
+            'top.px': 320,
             'left.px': car.progress * 2
+           }"></app-car>
+
+  <app-car *ngFor="let car of getCarsOnLane(2) | async"
+           class="car"
+           [ngStyle]="{
+            'transform': 'rotate(90deg)',
+            'top.px': 300,
+            'left.px': 600 - car.progress * 2
+           }"></app-car>
+
+  <app-car *ngFor="let car of getCarsOnLane(3) | async"
+           class="car"
+           [ngStyle]="{
+            'top.px': 600  - car.progress * 2,
+            'left.px': 305
+           }"></app-car>
+
+  <app-car *ngFor="let car of getCarsOnLane(4) | async"
+           class="car"
+           [ngStyle]="{
+            'top.px': car.progress * 2,
+            'left.px': 280
            }"></app-car>
 
   <div class="traffic-light-icon"
