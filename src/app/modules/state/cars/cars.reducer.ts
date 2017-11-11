@@ -23,8 +23,8 @@ export function carsReducer(
       return { ...state, cars: newCars };
 
     case CarsActions.ADD_CAR:
-      const newCar = {...action.payload, progress: 0 };
-      return { ...state, cars: [ ...state.cars, newCar ] };
+      const newCar = { ...action.payload, progress: 0 };
+      return { ...state, cars: [...state.cars, newCar] };
     default:
       return state;
   }

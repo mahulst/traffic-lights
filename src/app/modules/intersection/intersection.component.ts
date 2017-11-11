@@ -15,7 +15,7 @@ import { Car } from "../state/cars/cars.models";
 export class IntersectionComponent {
   public trafficLights$: Observable<TrafficLight[]>;
   public cars$: Observable<Car[]>;
-  public lightState = LightState; //TODO: enum in template?
+  public lightState = LightState;
 
   constructor(private store: Store<AppState>) {
     this.trafficLights$ = this.store.select(s => s.trafficLights.trafficLights);

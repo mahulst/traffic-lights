@@ -4,7 +4,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
 import { trafficLightsReducer } from "./traffic-lights/traffic-lights.reducer";
 import { carsReducer } from "./cars/cars.reducer";
-import { CarsEffects } from "./cars/cars.epic";
+import { CarsEffects } from "./cars/cars.effects";
 
 @NgModule({
   imports: [
@@ -12,9 +12,7 @@ import { CarsEffects } from "./cars/cars.epic";
       trafficLights: trafficLightsReducer,
       cars: carsReducer
     }),
-    EffectsModule.forRoot([
-      CarsEffects,
-    ]),
+    EffectsModule.forRoot([CarsEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     })

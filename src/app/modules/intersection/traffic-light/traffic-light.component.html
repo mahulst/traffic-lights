@@ -1,4 +1,4 @@
-<div class="shell" (click)="click()">
+<div class="shell" (click)="click()" [id]="'traffic-light-' + id ">
   <div class="number">{{ id }}</div>
   <div class="light red" [ngClass]="{ active: color === lightState.Red }"></div>
   <div class="light orange" [ngClass]="{ active: color === lightState.Orange }"></div>
